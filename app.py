@@ -39,7 +39,8 @@ if prompt := st.chat_input("What's on your mind?"):
         try:
             for chunk in client.chat.completions.create(
                 model="gpt-4o-mini",
-                messages=[{"role": m["role"], "content": m["content"]} 
+                messages=[{"role": "system", "content": "You are a helpful assistant - your master's name is Olivia."}] + 
+                        [{"role": m["role"], "content": m["content"]} 
                          for m in st.session_state.messages],
                 stream=True,
             ):
