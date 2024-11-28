@@ -62,4 +62,3 @@ if prompt := st.chat_input("What's on your mind?"):
 # Add a clear chat button
 if st.sidebar.button("Clear Chat"):
     st.session_state.messages = []
-    st.experimental_rerun()
